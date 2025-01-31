@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+translation_workspace/
+output/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Sensitive information
+.env
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Metrics and temporary files
+*.metrics
+temp/
