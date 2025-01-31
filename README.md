@@ -15,7 +15,7 @@ CodeTranslator is an advanced AI-powered code translation tool that leverages la
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/codetranslator.git
+git clone https://github.com/evandeilton/codetranslator.git
 cd codetranslator
 ```
 
@@ -72,6 +72,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - your.email@example.com
-
-Project Link: [https://github.com/yourusername/codetranslator](https://github.com/yourusername/codetranslator)
+Project Link: [https://github.com/evandeilton/codetranslator](https://github.com/evandeilton/codetranslator)
