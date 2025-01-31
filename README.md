@@ -34,29 +34,80 @@ pip install -r requirements.txt
 
 ### CLI Usage
 
+Translate between different programming languages directly from the command line:
+
 ```bash
-python codetranslator.py source_file.py python r
+# Basic translation
+python codetranslator.py tests/teste.py python r
+
+# Specify a different provider
+python codetranslator.py tests/teste.py python julia --provider anthropic
+
+# Disable validation or formatting
+python codetranslator.py tests/teste.py python cpp --no-validate --no-format
 ```
 
 ### Programmatic Usage
 
+Use the `codetranslate()` function in your Python scripts:
+
 ```python
 from codetranslator import codetranslate
 
+# Translate Python to R
 result = codetranslate(
-    source_file='example.py', 
+    source_file='tests/teste.py', 
     source_lang='python', 
     target_lang='r'
 )
+
+# Print translation details
+print(result['final_code'])
+print(f"Translation success: {result['success']}")
 ```
 
+### Supported Languages
+
+CodeTranslator supports translations between:
+- Python
+- R
+- Julia
+- C++
+- Rcpp
+
+### Example Test Files
+
+The `tests/` directory contains example source files for different languages:
+- `teste.py`: Python implementation of bubble sort
+- `teste.R`: R script example
+- `teste.jl`: Julia script example
+- `teste.cpp`: C++ script example
+
 ## Configuration
+
+### API Keys
 
 Set up your API keys in a `.env` file:
 ```
 OPENAI_API_KEY=your_openai_key
 ANTHROPIC_API_KEY=your_anthropic_key
 ```
+
+### Advanced Options
+
+- `provider`: Choose between 'openai' and 'anthropic'
+- `model`: Specify a particular LLM model
+- `validate`: Enable/disable code validation
+- `format_code`: Enable/disable code formatting
+- `trace`: Enable detailed logging
+
+## Performance Metrics
+
+CodeTranslator provides detailed metrics after each translation:
+- Total tokens used
+- Execution time
+- Number of translation attempts
+- Success/failure status
 
 ## Contributing
 
@@ -65,6 +116,12 @@ ANTHROPIC_API_KEY=your_anthropic_key
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## Limitations
+
+- Translation quality depends on the complexity of the source code
+- Some language-specific idioms may not translate perfectly
+- Requires API access to OpenAI or Anthropic
 
 ## License
 
